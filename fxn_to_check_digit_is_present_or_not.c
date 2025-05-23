@@ -10,7 +10,6 @@ printf("yes digit is present");
 else 
 printf("no digit is not present");
 return 0;}
-
 int f1(int n,int r)
 { int x,c=0;
     while (n!=0)
