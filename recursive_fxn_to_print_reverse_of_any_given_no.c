@@ -1,21 +1,20 @@
 #include <stdio.h>
-void binary(int);
+void reverse(int);
 int main()
 {
     int n;
     printf("enter the value of n ");
     scanf("%d", &n);
-    binary(n);
+    reverse(n);
 }
-void binary(int n)
+void reverse(int n)
 {  
    
-    if (n==0 || n==1)
+    if (n/10==0)
    printf("%d",n);
     else 
-    {
-   binary(n/2);
-    printf("%d",n%2);}
+    {printf("%d",n%10);
+   reverse(n/10);}
 }
 
 
