@@ -1,23 +1,22 @@
 #include <stdio.h>
-int f1(int,int);
-int  n;
+int f1(int,int,int);
+
 int main()
 {
     int a,b;
     printf("enter two nos. whose HCF is to be calculated: ");
     scanf("%d %d", &a,&b);
-    n=a-1;
-    printf("HCF = %d",f1(a,b));
+    int n=a;
+    printf("HCF = %d",f1(a,b,n));
    
 }
 
-int f1(int a,int b)
+int f1(int a,int b,int n)
 {
-    n++;
-  if (a%n==0 || b%n==0)
+    
+  if (a%n==0 && b%n==0)
     {   return n;
         }
-       f1(a/n,b/n);
-    
-    
+   n--;
+       f1(a,b,n);        
 }
