@@ -16,7 +16,7 @@ int main()
 }
 void sort(int a[], int x)
 {
-    int n, d, b[x];
+    int n, d, t;
     printf("enter the value of n : ");
     scanf("%d", &n);
     n %= x;
@@ -25,20 +25,22 @@ void sort(int a[], int x)
 
     if (d == 1)
     {
-        for (int i = 0; i < x; i++)
-            if (i < n)
-                b[i] = a[x - n + i];
-            else
-                b[i] = a[i - n];
+        for (int i = 1; i <= n; i++)
+        {
+            t = a[x - 1];
+            for (int i = x - 1; i > 0; i--)
+                a[i] = a[i - 1];
+            a[0] = t;
+        }
     }
     if (d == 2)
     {
-        for (int i = 0; i < x; i++)
-            if (i < x - n)
-                b[i] = a[n + i];
-            else
-                b[i] = a[i + n - x];
+        for (int i = 1; i <= n; i++)
+        {
+            t = a[0];
+            for (int i = 0; i < x - 1; i++)
+                a[i] = a[i + 1];
+            a[x - 1] = t;
+        }
     }
-    for (int i = 0; i < x; i++)
-        a[i] = b[i];
 }
