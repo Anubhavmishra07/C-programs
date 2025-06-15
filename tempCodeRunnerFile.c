@@ -1,38 +1,47 @@
 #include <stdio.h>
-
-void unique_elements(int a[], int n)
-{
-    printf("Unique elements in the array are: ");
-    for (int i = 0; i < n; i++)
-    {
-        int c = 0;
-        for (int j = 0; j < n; j++)
-        {
-            if (i != j && a[i] == a[j])
-            {
-                c = 1;
-                break;
-            }
-        }
-
-        if (c==0)
-            printf("%d ", a[i]);
-    }
-    printf("\n");
-}
-
+void prod(int a[][3], int b[][3]);
 int main()
 {
-    int n;
-    printf("Enter the size of array: ");
-    scanf("%d", &n);
 
-    int a[n];
-    printf("Enter the values: ");
-    for (int i = 0; i < n; i++)
-        scanf("%d", &a[i]);
-
-    unique_elements(a, n);
-
+    int a[3][3], b[3][3];
+    printf("enter the values of first array : ");
+    for (int i = 0; i < 3; i++)
+    {
+        for (int j = 0; j < 3; j++)
+            scanf("%d", &a[i][j]);
+    }
+    printf("enter the values of second array : ");
+    for (int i = 0; i < 3; i++)
+    {
+        for (int j = 0; j < 3; j++)
+            scanf("%d", &b[i][j]);
+    }
+    prod(a, b);
     return 0;
+}
+
+void prod(int a[][3], int b[][3])
+{
+    int p[3][3];
+    for (int i = 0; i < 3; i++)
+    {
+        for (int j = 0; j < 3; j++)
+            p[i][j] = 0;
+    }
+
+    for (int i = 0; i < 3; i++)
+    {
+        for (int j = 0; j < 3; j++)
+        {
+            for (int k = 0; k < 3; k++)
+                p[i][j] += a[j][k] * b[k][j];
+        }
+    }
+    printf("product :\n ");
+    for (int i = 0; i < 3; i++)
+    {
+        for (int j = 0; j < 3; j++)
+            printf("%d ", p[i][j]);
+        printf("\n");
+    }
 }
