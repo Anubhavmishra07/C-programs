@@ -1,5 +1,5 @@
 #include <stdio.h>
-void sum(int a[][3], int b[][3]);
+void prod(int a[][3], int b[][3]);
 int main()
 {
 
@@ -16,23 +16,28 @@ int main()
         for (int j = 0; j < 3; j++)
             scanf("%d", &b[i][j]);
     }
-    sum(a, b);
+    prod(a, b);
     return 0;
 }
 
-void sum(int a[][3], int b[][3])
+void prod(int a[][3], int b[][3])
 {
-    int s[3][3];
+    int p[3][3]={0};
+ 
+
     for (int i = 0; i < 3; i++)
     {
         for (int j = 0; j < 3; j++)
-            s[i][j] = a[i][j] + b[i][j];
+        {
+            for (int k = 0; k < 3; k++)
+                p[i][j] += a[i][k] * b[k][j];
+        }
     }
-    printf("sum :\n");
+    printf("product :\n");
     for (int i = 0; i < 3; i++)
     {
         for (int j = 0; j < 3; j++)
-            printf("%d ", s[i][j]);
+            printf("%d ", p[i][j]);
         printf("\n");
     }
 }

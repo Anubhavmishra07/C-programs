@@ -1,5 +1,5 @@
 #include <stdio.h>
-void transpose(int , int c, int a[][c]);
+void sparse(int, int c, int a[][c]);
 int main()
 {
 
@@ -8,31 +8,30 @@ int main()
     scanf("%d", &r);
     printf("enter the no. of columns c : ");
     scanf("%d", &c);
-    printf("enter the values of second array : ");
+    printf("enter the values of the matrix : ");
     int a[r][c];
     for (int i = 0; i < r; i++)
     {
         for (int j = 0; j < c; j++)
             scanf("%d", &a[i][j]);
     }
-    transpose(r, c, a);
+    sparse(r, c, a);
     return 0;
 }
-void transpose(int r, int c, int a[][c])
+void sparse(int r, int c, int a[][c])
 {
-    int t[c][r];
+    int s = 0;
 
     for (int i = 0; i < r; i++)
     {
         for (int j = 0; j < c; j++)
-            t[j][i] = a[i][j];
+        {
+            if (a[i][j] == 0)
+                s++;
+        }
     }
-
-    printf("transpose :\n");
-    for (int i = 0; i < c; i++)
-    {
-        for (int j = 0; j < r; j++)
-            printf("%d ", t[i][j]);
-        printf("\n");
-    }
+    if (s > (r * c)/2)
+        printf("it is a sparse matrix");
+    else
+        printf("not a sparse matrix");
 }
