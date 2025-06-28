@@ -10,6 +10,6 @@ int main()
     a[i] == 'A' || a[i] == 'E' || a[i] == 'I' || a[i] == 'O' || a[i] == 'U')
 
     c++;}
-     printf("frequency of vowels is %d",c);
+     printf("no of vowels is %d",c);
      return 0;
 }

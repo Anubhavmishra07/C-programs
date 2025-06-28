@@ -22,8 +22,6 @@ int palindrome(char a[])
     while (left < right && !isalnum(a[left]))
     {
       left++;
-      // if (left == right) don't need this bcoz every time the compiler will have to check for this
-      //   return 1; also if this the case then the program will end anyway in the next iteration
     }
     while (right > left && !isalnum(a[right]))
       right--;
