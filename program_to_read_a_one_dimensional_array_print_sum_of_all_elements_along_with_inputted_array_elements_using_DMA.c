@@ -3,12 +3,12 @@
 #include <string.h>
 void sum(int *p, int n)
 {
-    int *s = (int *)calloc(1, 4);
+    int *s = (int *)calloc(1, sizeof(int));
     for (int i = 0; i < n; i++)
         *s += p[i];
     printf("\nsum of all elements = %d", *s);
 }
-int* input(int n)
+int *input(int n)
 {
     int *p = (int *)calloc(n, sizeof(int));
     printf("enter the elements : ");
@@ -21,7 +21,7 @@ int* input(int n)
 }
 int main()
 {
-    int *a = (int *)malloc(4);
+    int *a = (int *)malloc(sizeof(int));
     printf("how many elements do you wish to enter ? : ");
     scanf("%d", a);
     int *r = input(*a);
