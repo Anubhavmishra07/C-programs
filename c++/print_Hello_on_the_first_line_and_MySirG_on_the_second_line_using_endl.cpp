@@ -1,11 +1,11 @@
 #include <iostream>
 using namespace std;
 int main()
-{
-    int x = 5;
-    cout << "how are you" << x << "nope";
-    int a, b;
-    cin >> a >> b;
-    cout << a << b;
+{ 
+    int y=8;
+    int &x=y;
+    int z=9;
+    z=x;
+    cout <<x<<" "<<z;
     return 0;
 }
