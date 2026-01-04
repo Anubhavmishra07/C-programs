@@ -1,10 +1,11 @@
 #include<stdio.h>
 int main()
-{int i,a=1,b,c=0;
+{int i,a,b,c=0;
 printf("enter a no.\n");
 scanf("%d",&b);
+a=b+1;
 while (1)
-{for (i=1;i<=a && a>b ;i++)
+{for (i=1;i<=a;i++)
 {
     if (a%i==0)
         c++;
